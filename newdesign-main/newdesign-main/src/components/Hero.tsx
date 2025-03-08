@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 
 const Hero = () => {
@@ -32,28 +31,27 @@ const Hero = () => {
       
       <div className="max-w-screen-lg mx-auto text-center z-10 animate-fade-in">
         <span className="inline-block px-3 py-1 mb-6 text-xs font-medium tracking-wider uppercase bg-secondary rounded-full animate-fade-in-up">
-          Introducing a New Era of Design
+          Revolutionizing Food Safety with AI
         </span>
         
         <h1 className="font-medium tracking-tight text-4xl md:text-6xl lg:text-7xl mb-4 animate-fade-in-up animate-delay-100">
-          Simplicity is the Ultimate <br className="hidden md:block" />
+          Your AI-Powered Allergy <br className="hidden md:block" />
           <span className="relative">
-            Sophistication
+            Safety Companion
             <span className="absolute -bottom-1 left-0 w-full h-1 bg-primary/10"></span>
           </span>
         </h1>
         
         <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up animate-delay-200">
-          Discover the perfect balance between form and function with our thoughtfully crafted products 
-          designed to elevate your everyday experience.
+          Scan, Detect, and Stay Safe—Our AI-powered allergen detection ensures every meal is worry-free.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-fade-in-up animate-delay-300">
           <button className="w-full sm:w-auto px-8 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors duration-300">
-            Explore Products
+            Try the App
           </button>
           <button className="w-full sm:w-auto px-8 py-3 border border-border font-medium rounded-md hover:bg-secondary transition-colors duration-300">
-            Learn More
+            How It Works
           </button>
         </div>
       </div>

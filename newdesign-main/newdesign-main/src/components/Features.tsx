@@ -1,4 +1,3 @@
-
 import FeatureCard from "./FeatureCard";
 
 const Features = () => {
@@ -19,8 +18,8 @@ const Features = () => {
           <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
         </svg>
       ),
-      title: "Timeless Design",
-      description: "Elegant aesthetics that never go out of style, focused on simplicity and usability."
+      title: "AI-Powered Detection",
+      description: "Instantly detect allergens in food using advanced AI & OCR technology."
     },
     {
       icon: (
@@ -38,8 +37,8 @@ const Features = () => {
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
         </svg>
       ),
-      title: "Premium Quality",
-      description: "Crafted with exceptional materials and precision engineering for lasting durability."
+      title: "Accurate & Reliable",
+      description: "Built with precision to ensure real-time, high-accuracy allergen detection."
     },
     {
       icon: (
@@ -58,8 +57,8 @@ const Features = () => {
           <path d="M12 16v-4M12 8h.01" />
         </svg>
       ),
-      title: "Intuitive Interface",
-      description: "Thoughtfully designed interactions that feel natural and require minimal learning."
+      title: "User-Friendly Experience",
+      description: "Simple and seamless scanning process for quick results, even offline."
     },
     {
       icon: (
@@ -84,8 +83,8 @@ const Features = () => {
           <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" />
         </svg>
       ),
-      title: "Sustainable Vision",
-      description: "Environmentally conscious design that minimizes waste and maximizes longevity."
+      title: "Smart Health Insights",
+      description: "Track allergens, receive alerts, and get safe food recommendations tailored to your needs."
     }
   ];
 
@@ -97,10 +96,10 @@ const Features = () => {
             Our Features
           </span>
           <h2 className="text-3xl md:text-4xl font-medium mb-4 animate-fade-in-up">
-            Designed with Purpose
+            Built for Allergy Safety & Peace of Mind
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground animate-fade-in-up animate-delay-100">
-            Every aspect of our products is thoughtfully considered to provide exceptional experiences that simplify and enrich everyday life.
+            Designed to protect you from hidden allergens with AI-powered detection, ensuring a safer and healthier eating experience.
           </p>
         </div>
 

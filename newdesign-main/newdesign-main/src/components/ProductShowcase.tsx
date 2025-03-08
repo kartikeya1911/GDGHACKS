@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
@@ -18,40 +17,41 @@ const ProductShowcase = () => {
   const products: Product[] = [
     {
       id: 1,
-      name: "Essence Speaker",
-      description: "A wireless speaker that combines pristine audio quality with elegant design to complement any space.",
+      name: "AI Allergy Scanner",
+      description: "An AI-powered scanner that detects allergens in food, providing instant safety insights and recommendations.",
       features: [
-        "360° Immersive Sound",
-        "24-hour Battery Life",
-        "Adaptive Room Calibration",
-        "Seamless Connectivity"
+        "Real-Time Allergen Detection",
+        "AI-Powered Ingredient Analysis",
+        "Custom Allergen Profiles",
+        "Works Offline & Supports Multiple Languages"
       ],
       image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=2940&auto=format&fit=crop"
     },
     {
-      id: 2,
-      name: "Harmony Lamp",
-      description: "An intelligent lighting solution that adapts to your mood and activities throughout the day.",
-      features: [
-        "Circadian Rhythm Settings",
-        "Touch-free Controls",
-        "Personalized Ambiance",
-        "Energy Efficient Design"
+      "id": 2,
+      "name": "AI Food Scanner",
+      "description": "An intelligent allergen detection tool that ensures your meals are safe by analyzing ingredients in real time.",
+      "features": [
+        "Instant Allergen Recognition",
+        "AI-Powered OCR Scanning",
+        "Personalized Allergen Alerts",
+        "Offline & Multilingual Support"
       ],
-      image: "https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?q=80&w=2940&auto=format&fit=crop"
+      "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=2940&auto=format&fit=crop"
     },
     {
-      id: 3,
-      name: "Clarity Display",
-      description: "An ultra-thin monitor with exceptional color accuracy and eye comfort for creative professionals.",
-      features: [
-        "True-to-life Colors",
-        "Anti-glare Coating",
-        "Adaptive Brightness",
-        "Minimal Bezels"
+      "id": 3,
+      "name": "Smart Allergy Tracker",
+      "description": "A health companion that tracks your allergen exposure and provides food recommendations for a safer lifestyle.",
+      "features": [
+        "Custom Allergen Profiles",
+        "Safe Food Recommendations",
+        "AI-Powered Ingredient Analysis",
+        "Seamless App Integration"
       ],
-      image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=2940&auto=format&fit=crop"
+      "image": "https://images.unsplash.com/photo-1594007654729-e1a6a6e50c6e?q=80&w=2940&auto=format&fit=crop"
     }
+    
   ];
 
   useEffect(() => {
@@ -85,10 +85,10 @@ const ProductShowcase = () => {
             Our Products
           </span>
           <h2 className="text-3xl md:text-4xl font-medium mb-4">
-            Refined Simplicity
+            Smart Food Safety, Simplified
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground">
-            Discover products that embody our commitment to thoughtful design and exceptional craftsmanship.
+            Experience the power of AI in allergen detection—designed for accuracy, ease, and safety.
           </p>
         </div>
 
@@ -159,7 +159,7 @@ const ProductShowcase = () => {
             </div>
             
             <button className="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors duration-300">
-              Learn More
+              Try the App
             </button>
           </div>
         </div>
