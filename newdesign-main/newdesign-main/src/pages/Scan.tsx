@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAllergyData } from "@/contexts/AllergyDataContext";
 import { Button } from "@/components/ui/button";
 import { SafetyIndicator } from "@/components/ui/safety-indicator";
 import { useToast } from "@/hooks/use-toast";
-import { Camera, Image, Barcode, List, X, Check, AlertTriangle, RefreshCw } from "lucide-react";
+import { Camera, Image, Barcode, List } from "lucide-react";
 
 const Scan = () => {
   const [activeTab, setActiveTab] = useState<"barcode" | "image">("barcode");
@@ -17,14 +17,51 @@ const Scan = () => {
   const { addProduct, checkSafety } = useAllergyData();
   const { toast } = useToast();
   const navigate = useNavigate();
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const streamRef = useRef<MediaStream | null>(null);
 
-  // Mock function to simulate barcode scanning
+  useEffect(() => {
+    return () => {
+      if (streamRef.current) {
+        streamRef.current.getTracks().forEach(track => track.stop());
+      }
+    };
+  }, []);
+
+  const startCamera = () => {
+    if (videoRef.current) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+          streamRef.current = stream;
+          videoRef.current!.srcObject = stream;
+          videoRef.current!.play();
+        })
+        .catch(err => {
+          console.error("Error accessing camera: ", err);
+          toast({
+            title: "Camera Error",
+            description: "Unable to access camera. Please check your device settings.",
+            variant: "destructive",
+          });
+        });
+    }
+  };
+
+  const stopCamera = () => {
+    if (streamRef.current) {
+      streamRef.current.getTracks().forEach(track => track.stop());
+      streamRef.current = null;
+    }
+  };
+
   const handleScanBarcode = () => {
     setIsScanning(true);
+    startCamera();
     
     // Simulate a delay for scanning
     setTimeout(() => {
       setIsScanning(false);
+      stopCamera();
       
       // Mock data for testing
       const mockProduct = {
@@ -51,7 +88,6 @@ const Scan = () => {
     }, 2000);
   };
 
-  // Mock function to simulate image upload and ingredient extraction
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -90,7 +126,6 @@ const Scan = () => {
     }, 2000);
   };
 
-  // Save the scanned product and navigate to details
   const handleSaveProduct = () => {
     if (!productName || ingredients.length === 0) {
       toast({
@@ -118,7 +153,6 @@ const Scan = () => {
     navigate("/history");
   };
 
-  // Calculate safety status
   const safetyStatus = ingredients.length > 0
     ? checkSafety(
         ingredients,
@@ -127,7 +161,7 @@ const Scan = () => {
     : "safe";
 
   return (
-    <div className="container max-w-md mx-auto p-4 space-y-6">
+    <div className="container max-w-md mx-auto p-4 space-y-6 pb-24">
       <div className="text-center space-y-2 mb-6">
         <h1 className="text-2xl font-bold">Scan Product</h1>
         <p className="text-muted-foreground">
@@ -169,7 +203,7 @@ const Scan = () => {
               {isScanning ? (
                 <div className="animate-pulse">Scanning...</div>
               ) : (
-                <Camera size={40} className="text-muted-foreground" />
+                <video ref={videoRef} className="w-full h-full object-cover" />
               )}
             </div>
             <Button
@@ -241,8 +275,9 @@ const Scan = () => {
           </Button>
         </div>
       )}
-      {/* Add Contribute Button - Fixed at bottom center */}
-      <div className="fixed bottom-8 left-0 right-0 flex justify-center">
+      
+      {/* Add Contribute Button - Scrollable */}
+      <div className="mt-8 flex justify-center">
         <Link to="/contributors">
           <Button className="bg-green-600 hover:bg-green-700 text-white rounded-md px-6 py-2 shadow-lg flex items-center space-x-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -252,9 +287,12 @@ const Scan = () => {
           </Button>
         </Link>
       </div>
+      
+      {/* Additional Text */}
+      <div className="mt-4 text-center text-gray-400">
+        <p>Help us improve our database by contributing missing items.</p>
+      </div>
     </div>
-
-    
   );
 };
 
