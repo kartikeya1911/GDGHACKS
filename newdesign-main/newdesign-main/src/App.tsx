@@ -1,9 +1,8 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import { AllergyDataProvider } from "@/contexts/AllergyDataContext";
@@ -19,6 +18,8 @@ import Scan from "./pages/Scan";
 import ProductDetails from "./pages/ProductDetails";
 import Settings from "./pages/Settings";
 import Notifications from "./pages/Notifications";
+import UserGuide from "@/components/UserGuide";
+import Contributors from "@/components/Contributors";
 
 const queryClient = new QueryClient();
 
@@ -47,10 +48,12 @@ const App = () => (
           <TooltipProvider>
             <Toaster />
             <Sonner />
-            <BrowserRouter>
+            <Router>
               <Routes>
                 {/* Public home page - remains accessible but shows limited functionality */}
                 <Route path="/" element={<Index />} />
+                <Route path="/user-guide" element={<UserGuide />} />
+                <Route path="/contributors" element={<Contributors />} />
                 
                 {/* Auth routes */}
                 <Route path="/login" element={<Login />} />
@@ -103,7 +106,7 @@ const App = () => (
                 {/* Catch-all route */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
-            </BrowserRouter>
+            </Router>
           </TooltipProvider>
         </AllergyDataProvider>
       </AuthProvider>

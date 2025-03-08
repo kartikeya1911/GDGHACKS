@@ -1,10 +1,10 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import ProductShowcase from "@/components/ProductShowcase";
 import UserGuide from "@/components/UserGuide"; 
-
 
 const Index = () => {
   useEffect(() => {
@@ -41,9 +41,11 @@ const Index = () => {
               <p className="text-muted-foreground mb-6">
                 With real-time scanning, personalized allergen alerts, and a seamless user experience, we ensure that food safety is accessible to everyone, anywhere.
               </p>
-              <button className="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors duration-300">
-                See How It Works
-              </button>
+              <Link to="/user-guide">
+                <button className="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors duration-300">
+                  See How It Works
+                </button>
+              </Link>
             </div>
             
             <div className="relative order-1 md:order-2 aspect-square overflow-hidden rounded-2xl animate-fade-in-up animate-delay-200">

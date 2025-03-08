@@ -1,12 +1,11 @@
-
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAllergyData } from "@/contexts/AllergyDataContext";
 import { Button } from "@/components/ui/button";
 import { SafetyIndicator } from "@/components/ui/safety-indicator";
 import { useToast } from "@/hooks/use-toast";
-import { Camera, Image, Barcode, List } from "lucide-react";
+import { Camera, Image, Barcode, List, X, Check, AlertTriangle, RefreshCw } from "lucide-react";
 
 const Scan = () => {
   const [activeTab, setActiveTab] = useState<"barcode" | "image">("barcode");
@@ -242,7 +241,20 @@ const Scan = () => {
           </Button>
         </div>
       )}
+      {/* Add Contribute Button - Fixed at bottom center */}
+      <div className="fixed bottom-8 left-0 right-0 flex justify-center">
+        <Link to="/contributors">
+          <Button className="bg-green-600 hover:bg-green-700 text-white rounded-md px-6 py-2 shadow-lg flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+            <span>Contribute Missing Item</span>
+          </Button>
+        </Link>
+      </div>
     </div>
+
+    
   );
 };
 

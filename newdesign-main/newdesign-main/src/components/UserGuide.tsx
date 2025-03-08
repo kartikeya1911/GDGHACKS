@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const UserGuide: React.FC = () => {
   return (
@@ -37,6 +38,24 @@ const UserGuide: React.FC = () => {
         <button className="border border-white text-white px-6 py-3 rounded-lg">
           Learn More
         </button>
+      </div>
+      
+      {/* Contribute Button */}
+      <div className="mt-8">
+        <Link to="/contributors">
+          <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg">
+            Contribute to Our Database
+          </Button>
+        </Link>
+      </div>
+      
+      {/* Back Button */}
+      <div className="mt-4">
+        <Link to="/">
+          <Button variant="outline" className="text-white border-white hover:bg-gray-800">
+            Back to Home
+          </Button>
+        </Link>
       </div>
     </div>
   );
