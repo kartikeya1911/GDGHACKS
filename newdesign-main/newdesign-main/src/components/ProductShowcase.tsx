@@ -25,7 +25,7 @@ const ProductShowcase = () => {
         "Custom Allergen Profiles",
         "Works Offline & Supports Multiple Languages"
       ],
-      image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=2940&auto=format&fit=crop"
+      image: "https://ambiq.com/wp-content/uploads/2024/10/Sniffing-Out-the-Benefits-of-AI-in-Allergen-Testing-woman-with-tablet.jpg"
     },
     {
       "id": 2,
@@ -37,7 +37,7 @@ const ProductShowcase = () => {
         "Personalized Allergen Alerts",
         "Offline & Multilingual Support"
       ],
-      "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=2940&auto=format&fit=crop"
+      "image": "https://i.nextmedia.com.au/news/GS1_iphonescan.jpg"
     },
     {
       "id": 3,

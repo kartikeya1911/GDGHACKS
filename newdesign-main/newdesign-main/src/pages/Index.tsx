@@ -48,7 +48,7 @@ const Index = () => {
             
             <div className="relative order-1 md:order-2 aspect-square overflow-hidden rounded-2xl animate-fade-in-up animate-delay-200">
               <img 
-                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2940&auto=format&fit=crop" 
+                src="https://i.ibb.co/s1HGr2H/image.png" 
                 alt="Product design"
                 className="object-cover w-full h-full"
               />
